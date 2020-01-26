@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Launch } from './Launch';
+import Launch from './Launch';
 import { NavBar } from './NavBar';
 
 export const App = () => {
