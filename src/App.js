@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Launch } from './Launch';
+import { NavBar } from './NavBar';
 
 export const App = () => {
   const [pastLaunches, setPastLaunches] = useState([])
@@ -14,6 +15,7 @@ export const App = () => {
 
   return (
     <div>
+      <NavBar />
       <h3>Past launches</h3>
       <ul>
         {pastLaunches.map(el => (
@@ -22,5 +24,4 @@ export const App = () => {
       </ul>
     </div>
   )
-  
-}
+};
