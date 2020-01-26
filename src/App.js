@@ -2,8 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Launch from './Launch';
 import { NavBar } from './NavBar';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-export const App = () => {
+const styles = {
+  root: {
+    flexGrow: 1
+  }
+};
+
+const App = (props) => {
+  const { classes } = props
   const [pastLaunches, setPastLaunches] = useState([])
 
   useEffect(() => {
@@ -14,14 +24,20 @@ export const App = () => {
   }, [])
 
   return (
-    <div>
+    <div className={classes.root}>
       <NavBar />
       <h3>Past launches</h3>
-      <ul>
+      <Grid container spacing={0} alignItems="center" justify="center">
         {pastLaunches.map(el => (
           <Launch data={el} key={el.flight_number}/>
         ))}
-      </ul>
+      </Grid>
     </div>
   )
 };
+
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(App)

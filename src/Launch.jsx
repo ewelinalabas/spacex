@@ -5,6 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -13,7 +14,6 @@ const styles = {
     maxWidth: 345,
   },
   media: {
-    // ⚠️ object-fit is not supported by IE 11.
     objectFit: 'cover',
   },
 };
@@ -26,24 +26,26 @@ const Launch = (props) => {
   const url = "https://www.youtube.com/embed/" + data.links.youtube_id
 
   return(
-    <Card className={classes.card}>
-      <CardActionArea>
-      <CardMedia 
-        component="iframe"
-        className={classes.media}
-        title={data.links.youtube_id} 
-        src={url}
-        height="315"
-      />
-      <CardContent>
-        <Typography variant="h5">{data.mission_name}</Typography>
-        <Typography>Date: {date}</Typography>
-        <Typography>Rocket: {data.rocket.rocket_name}</Typography>
-        <Typography>Site: {data.launch_site.site_name_long}</Typography>
-        <Typography>Payload: {payload.payload_type}</Typography>
-      </CardContent>
-      </CardActionArea>
-    </Card>
+    <Grid item xs={6}>
+      <Card className={classes.card}>
+        <CardActionArea>
+        <CardMedia 
+          component="iframe"
+          className={classes.media}
+          title={data.links.youtube_id} 
+          src={url}
+          height="315"
+        />
+        <CardContent>
+          <Typography variant="h6">{data.mission_name}</Typography>
+          <Typography>Date: {date}</Typography>
+          <Typography>Rocket: {data.rocket.rocket_name}</Typography>
+          <Typography>Site: {data.launch_site.site_name_long}</Typography>
+          <Typography>Payload: {payload.payload_type}</Typography>
+        </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
   );
 };
 
