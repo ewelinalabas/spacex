@@ -1,18 +1,20 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 export const NavBar = () => {
   return(
       <div>
       <AppBar position="static">
-          <Toolbar>
-              <Typography variant="title" color="inherit">
-              React & Material-UI Sample Application
-              </Typography>
-          </Toolbar>
+          <Tabs>
+            <Tab label="Home"/>
+            <Tab label="Past launches"/>
+            <Tab label="Upcoming launches"/>
+          </Tabs>
       </AppBar>
       </div>
   )
 }
+
+export default NavBar;

@@ -29,20 +29,20 @@ const Launch = (props) => {
     <Grid item xs={6}>
       <Card className={classes.card}>
         <CardActionArea>
-        <CardMedia 
-          component="iframe"
-          className={classes.media}
-          title={data.links.youtube_id} 
-          src={url}
-          height="315"
-        />
-        <CardContent>
-          <Typography variant="h6">{data.mission_name}</Typography>
-          <Typography>Date: {date}</Typography>
-          <Typography>Rocket: {data.rocket.rocket_name}</Typography>
-          <Typography>Site: {data.launch_site.site_name_long}</Typography>
-          <Typography>Payload: {payload.payload_type}</Typography>
-        </CardContent>
+          <CardMedia 
+            component="iframe"
+            className={classes.media}
+            title={data.links.youtube_id} 
+            src={url}
+            height="315"
+          />
+          <CardContent>
+            <Typography variant="h6">{data.mission_name}</Typography>
+            <Typography>Date: {date}</Typography>
+            <Typography>Rocket: {data.rocket.rocket_name}</Typography>
+            <Typography>Site: {data.launch_site.site_name_long}</Typography>
+            <Typography>Payload: {payload.payload_type}</Typography>
+          </CardContent>
         </CardActionArea>
       </Card>
     </Grid>
@@ -50,7 +50,7 @@ const Launch = (props) => {
 };
 
 Launch.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Launch)
