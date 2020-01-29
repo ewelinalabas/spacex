@@ -9,9 +9,9 @@ const NavBar = () => {
       <div>
       <AppBar position="static">
           <Tabs>
-            <NavLink to="/"><Tab label="Home"/></NavLink>
-            <NavLink to="/pastlaunches"><Tab label="Past launches"/></NavLink>
-            <NavLink to="/upcominglaunches"><Tab label="Upcoming launches"/></NavLink>
+            <Tab component={NavLink} to={"/"} label="Home"/>
+            <Tab component={NavLink} to={"pastlaunches"} label="Past launches"/>
+            <Tab component={NavLink} to={"upcominglaunches"} label="Upcoming launches"/>
           </Tabs>
       </AppBar>
       </div>
