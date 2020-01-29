@@ -2,15 +2,16 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { NavLink } from 'react-router-dom';
 
-export const NavBar = () => {
+const NavBar = () => {
   return(
       <div>
       <AppBar position="static">
           <Tabs>
-            <Tab label="Home"/>
-            <Tab label="Past launches"/>
-            <Tab label="Upcoming launches"/>
+            <NavLink to="/"><Tab label="Home"/></NavLink>
+            <NavLink to="/pastlaunches"><Tab label="Past launches"/></NavLink>
+            <NavLink to="/upcominglaunches"><Tab label="Upcoming launches"/></NavLink>
           </Tabs>
       </AppBar>
       </div>

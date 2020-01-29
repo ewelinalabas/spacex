@@ -13,7 +13,7 @@ const routing = (
     <div className="container">
       <Route exact path="/" component={App} />
       <Route path="/pastlaunches" component={PastLaunches} />
-      {/* <Route path="/instructions" component={Instructions} /> */}
+      {/* <Route path="/futurelaunches" component={FutureLaunches} /> */}
     </div>
   </Router>
 )
