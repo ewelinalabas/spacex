@@ -2,8 +2,9 @@ import React from 'react';
 import Background from './spacex.jpg';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import { Card, CardMedia, Button } from '@material-ui/core';
+import { Card, Button, Paper, CardContent } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
+import LaunchClock from './LaunchClock';
 
 const styles = {
   imgbox: {
@@ -22,19 +23,27 @@ const styles = {
     left: '25%',
     color: 'black',
     backgroundColor: 'white'
- }
+ },
+  overlay2: {
+    position: 'absolute',
+    bottom: '40%',
+    left: '25%',
+    color: 'black',
+    backgroundColor: 'white'
+  }
 }
 
 const App = (props) => {
   const { classes } = props
   return (
-    <Card className={classes.imgbox}>
-      <CardMedia 
+    <Paper className={classes.imgbox}>
+      <CardContent component={LaunchClock} />
+      <Card
         className={classes.img} 
         alt="'SpaceX Starman' by Florian R. is licensed under CC BY-NC-ND 4.0" >
-           <Button className={classes.overlay} component={NavLink} to={"pastlaunches"}>See past launches</Button>
-      </CardMedia>
-    </Card>
+      </Card>
+      <Button className={classes.overlay} component={NavLink} to={"pastlaunches"}>See past launches</Button>
+    </Paper>
   )
 }
 
