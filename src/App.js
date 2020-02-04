@@ -28,8 +28,6 @@ const styles = {
     position: 'absolute',
     bottom: '40%',
     left: '25%',
-    color: 'black',
-    backgroundColor: 'white'
   }
 }
 
@@ -37,12 +35,14 @@ const App = (props) => {
   const { classes } = props
   return (
     <Paper className={classes.imgbox}>
-      <CardContent component={LaunchClock} />
       <Card
         className={classes.img} 
         alt="'SpaceX Starman' by Florian R. is licensed under CC BY-NC-ND 4.0" >
+          <CardContent className={classes.overlay2}>
+            <LaunchClock />
+          </CardContent>
+          <Button className={classes.overlay} component={NavLink} to={"pastlaunches"}>See past launches</Button>
       </Card>
-      <Button className={classes.overlay} component={NavLink} to={"pastlaunches"}>See past launches</Button>
     </Paper>
   )
 }

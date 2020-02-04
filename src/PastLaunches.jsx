@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PastLaunch from './PastLaunch';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles'
+import { GridList } from '@material-ui/core';
 
 const styles = {
   root: {
@@ -14,6 +14,7 @@ const styles = {
 const PastLaunches = (props) => {
   const { classes } = props
   const [pastLaunches, setPastLaunches] = useState([])
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
       axios.get('https://api.spacexdata.com/v3/launches/past?limit=10&order=desc')
@@ -22,17 +23,17 @@ const PastLaunches = (props) => {
       })
   }, [])
 
+  const handleChange = () => {
+    setChecked(prev => !prev);
+  };
+
   return (
-    <div className={classes.root}>
-      <Grid container
-        direction="row"
-        justify="center"
-        alignItems="stretch"
-      >
+    <div>
+      <GridList cellHeight={345}>
         {pastLaunches.map(el => (
           <PastLaunch data={el} key={el.flight_number}/>
-        ))}
-      </Grid>
+      ))}
+      </GridList>
     </div>
   )
 };

@@ -5,12 +5,12 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   card: {
+    margin: 'auto',
     maxWidth: 345,
   },
   media: {
@@ -26,7 +26,6 @@ const PastLaunch = (props) => {
   const url = "https://www.youtube.com/embed/" + data.links.youtube_id
 
   return(
-    <Grid item xs={6}>
       <Card className={classes.card}>
         <CardActionArea>
           <CardMedia 
@@ -45,7 +44,6 @@ const PastLaunch = (props) => {
           </CardContent>
         </CardActionArea>
       </Card>
-    </Grid>
   );
 };
 
